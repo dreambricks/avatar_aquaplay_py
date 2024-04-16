@@ -31,7 +31,7 @@
         }
 
         .background {
-            background-image: url("{{ url_for('static', filename='images/score_template/fogo/fogo_background.png') }}");
+            background-image: url("{{ url_for('static', filename='images/score_template/terra/terra_background.png') }}");
             background-size: cover;
             background-repeat: no-repeat;
             position: relative;
@@ -54,8 +54,8 @@
 
         .score-text {
             background-image: url("{{ url_for('static', filename='images/score_template/texture.png') }}");
-            background-clip: text;
-            -webkit-text-fill-color: transparent; /* Para navegadores baseados em WebKit */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             background-color: #f1f1f1; /* Fallback para navegadores que não suportam background-clip */
             padding-top: 6rem;
             font-size: 10rem;
@@ -66,7 +66,7 @@
 
         .pontos{
             background-image: url("{{ url_for('static', filename='images/score_template/texture.png') }}");
-            background-clip: text;
+            -webkit-background-clip: text;
             -webkit-text-fill-color: transparent; /* Para navegadores baseados em WebKit */
             background-color: #f1f1f1; /* Fallback para navegadores que não suportam background-clip */
             padding-top: -8rem;
@@ -91,10 +91,10 @@
 <div class="container background">
 
     <img class="title" src="{{ url_for('static', filename='images/score_template/titulo.png') }}">
-    <img class="nation-icon" src="{{ url_for('static', filename='images/score_template/fogo/fogo-icon.png') }}">
-    <span class="score-text">10.000</span>
+    <img class="nation-icon" src="{{ url_for('static', filename='images/score_template/terra/terra-icon.png') }}">
+    <span class="score-text">{{ score }}</span>
     <h3 class="pontos">pontos</h3>
-    <img class="nation-text" src="{{ url_for('static', filename='images/score_template/fogo/fogo-text.png') }}">
+    <img class="nation-text" src="{{ url_for('static', filename='images/score_template/terra/terra-text.png') }}">
     <img class="claro-logo" src="{{ url_for('static', filename='images/score_template/claro-logo.png') }}">
 </div>
 
