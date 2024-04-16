@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Score</title>
+    <style>
+        * {
+            border: none;
+            margin: 0;
+        }
+
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding-top: 26px;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .background {
+            background-image: url("{{ url_for('static', filename='images/score_template/fogo/fogo_background.png') }}");
+            background-size: cover;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .title {
+            height: 10rem;
+            padding-top: 8rem;
+        }
+
+        .nation-icon {
+            height: 30rem;
+            padding-top: 8rem;
+        }
+
+        @font-face {
+        font-family: 'amx';
+        src: url('/static/fonts/AMX-Black.ttf') format('truetype');
+        }
+
+        .score-text {
+            background-image: url("{{ url_for('static', filename='images/score_template/texture.png') }}");
+            background-clip: text;
+            -webkit-text-fill-color: transparent; /* Para navegadores baseados em WebKit */
+            background-color: #f1f1f1; /* Fallback para navegadores que não suportam background-clip */
+            padding-top: 6rem;
+            font-size: 10rem;
+            font-weight: bold;
+            font-family: 'amx', sans-serif;
+            height: 10rem;
+        }
+
+        .pontos{
+            background-image: url("{{ url_for('static', filename='images/score_template/texture.png') }}");
+            background-clip: text;
+            -webkit-text-fill-color: transparent; /* Para navegadores baseados em WebKit */
+            background-color: #f1f1f1; /* Fallback para navegadores que não suportam background-clip */
+            padding-top: -8rem;
+            font-size: 5rem;
+            font-weight: bold;
+            font-family: 'amx', sans-serif;
+        }
+
+        .nation-text{
+            height: 8rem;
+        }
+
+        .claro-logo{
+            height: 5rem;
+            padding-top: 6rem;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="container background">
+
+    <img class="title" src="{{ url_for('static', filename='images/score_template/titulo.png') }}">
+    <img class="nation-icon" src="{{ url_for('static', filename='images/score_template/fogo/fogo-icon.png') }}">
+    <span class="score-text">10.000</span>
+    <h3 class="pontos">pontos</h3>
+    <img class="nation-text" src="{{ url_for('static', filename='images/score_template/fogo/fogo-text.png') }}">
+    <img class="claro-logo" src="{{ url_for('static', filename='images/score_template/claro-logo.png') }}">
+</div>
+
+</body>
+</html>
